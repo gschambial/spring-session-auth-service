@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity UserMaster.
+    -->
+    <changeSet id="20181118130211-2" author="jhipster">
+        <createTable tableName="user_master">
+            <column name="id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="jhi_password" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="user_email" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="country_code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="dob" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="gender" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="status" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="create_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="update_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="user_phone" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="email_auth" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="phone_auth" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="user_master" columnName="dob" columnDataType="datetime"/>
+        <dropDefaultValue tableName="user_master" columnName="create_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="user_master" columnName="update_date" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

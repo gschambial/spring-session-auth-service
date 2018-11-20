@@ -1,0 +1,23 @@
+entity UserMaster {
+    userId String required,
+    password String required,
+    firstName String required,
+    lastName String required,
+    userEmail String required,
+    countryCode String required,
+    dob ZonedDateTime required,
+    gender String required,
+    status Integer,
+    createDate ZonedDateTime required,
+    updateDate ZonedDateTime required,
+    userPhone String required,
+    emailAuth Boolean,
+    phoneAuth Boolean 
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+//angularSuffix * with mySuffix

@@ -1,0 +1,17 @@
+{
+  "name": "auth-service",
+  "version": "0.0.0",
+  "description": "Description for AuthService",
+  "private": true,
+  "license": "UNLICENSED",
+  "cacheDirectories": [
+    "node_modules"
+  ],
+  "devDependencies": {
+    "generator-jhipster-swagger-cli": "3.0.1",
+    "generator-jhipster": "5.7.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  }
+}
